@@ -65,6 +65,16 @@ main.add_command(search)
 
 
 @main.command()
+@click.option('--db-path', default='data/bungo_production.db', help='データベースファイルのパス')
+@click.option('--output-dir', default='output', help='出力ディレクトリ')
+@click.option('--include-stats', is_flag=True, help='統計情報も出力する')
+def export_csv(db_path, output_dir, include_stats):
+    """📊 CSV出力"""
+    from bungo_map.cli.export_csv import export_csv as csv_export
+    csv_export(db_path, output_dir, include_stats)
+
+
+@main.command()
 @click.option('--format', 'export_format', type=click.Choice(['geojson', 'csv']), 
               default='geojson', help='エクスポート形式')
 @click.option('--output', '-o', help='出力ファイルパス')
