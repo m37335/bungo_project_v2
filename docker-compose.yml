@@ -1,0 +1,70 @@
+# 🌟 文豪ゆかり地図システム v2.0 - 強くてニューゲーム版
+# Docker Compose 設定ファイル
+
+services:
+  # メイン開発コンテナ
+  bungo-dev:
+    build: .
+    container_name: bungo-map-v2-dev
+    volumes:
+      - .:/app
+      - bungo_cache:/app/cache
+      # Git設定の共有
+      - ~/.gitconfig:/home/developer/.gitconfig:ro
+    ports:
+      - "8080:8080"  # 開発サーバー（Flask/FastAPI）
+      - "3000:3000"  # フロントエンド開発サーバー
+    environment:
+      - BUNGO_ENV=development
+      - BUNGO_DEBUG=true
+      - BUNGO_LOG_LEVEL=INFO
+      - PYTHONPATH=/app
+      - DATABASE_URL=postgresql://bungo:bungo123@postgres:5432/bungo_map_db
+      - REDIS_URL=redis://redis:6379/0
+    working_dir: /app
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - bungo-network
+
+  # PostgreSQL データベース
+  postgres:
+    image: postgres:15-alpine
+    container_name: bungo-postgres-v2
+    environment:
+      POSTGRES_DB: bungo_map_db
+      POSTGRES_USER: bungo
+      POSTGRES_PASSWORD: bungo123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql:/docker-entrypoint-initdb.d
+    ports:
+      - "5433:5432"  # ローカルPostgreSQLとの競合避け
+    networks:
+      - bungo-network
+
+  # Redis キャッシュ
+  redis:
+    image: redis:7-alpine
+    container_name: bungo-redis-v2
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6380:6379"  # ローカルRedisとの競合避け
+    networks:
+      - bungo-network
+
+# データ永続化ボリューム
+volumes:
+  postgres_data:
+  redis_data:
+  bungo_cache:
+
+# カスタムネットワーク
+networks:
+  bungo-network:
+    driver: bridge

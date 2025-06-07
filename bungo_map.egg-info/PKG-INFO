@@ -1,0 +1,228 @@
+Metadata-Version: 2.1
+Name: bungo-map
+Version: 2.0.0
+Summary: 文豪ゆかり地図システム - 作家・作品・舞台地名の3階層データ管理システム
+Home-page: https://github.com/masa/bungo-map
+Author: Masa
+Author-email: masa@example.com
+License: UNKNOWN
+Project-URL: Bug Reports, https://github.com/masa/bungo-map/issues
+Project-URL: Source, https://github.com/masa/bungo-map
+Project-URL: Documentation, https://bungo-map.readthedocs.io
+Keywords: nlp,japanese,literature,geography,map,bungo
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Text Processing :: Linguistic
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+
+# 🌟 文豪ゆかり地図システム v2.0
+
+> **強くてニューゲーム版** - 作家・作品・舞台（地名）の3階層データを安定取得し、検索・可視化・拡張しやすいバックエンドシステム
+
+## 📋 概要
+
+文豪ゆかり地図システムは、日本の文豪とその作品に登場する地名を体系的に収集・管理し、地図上で可視化するためのシステムです。
+
+### 🎯 主な機能
+
+- **データ収集**: Wikipedia + 青空文庫からの自動データ抽出
+- **地名抽出**: GiNZA NLP + MeCab による高精度地名認識
+- **ジオコーディング**: Google Maps API による緯度経度取得
+- **検索システム**: 作者・作品・地名の相互検索
+- **データエクスポート**: GeoJSON、CSV、Excel形式での出力
+- **REST API**: FastAPI による高性能API提供
+
+## 🏗️ アーキテクチャ
+
+```
+作者 (authors) 1 ← N 作品 (works) 1 ← N 地名 (places)
+```
+
+### データフロー
+```
+Wikipedia → 作品一覧取得 → 青空文庫テキスト取得 → NLP地名抽出 → ジオコーディング → データベース
+```
+
+## 🚀 クイックスタート
+
+### 開発コンテナで開始
+
+1. **プロジェクトディレクトリに移動**
+   ```bash
+   cd bungo_project_v2
+   ```
+
+2. **開発環境起動**
+   ```bash
+   make build
+   make up
+   make shell
+   ```
+
+3. **パッケージインストール**
+   ```bash
+   make install
+   ```
+
+4. **初期データ収集**
+   ```bash
+   make demo
+   ```
+
+5. **API server起動**
+   ```bash
+   make server
+   ```
+
+### ローカル環境セットアップ
+
+```bash
+# Python 3.11+ 環境での実行
+pip install -r requirements.txt
+python -m spacy download ja_core_news_sm
+pip install -e .
+```
+
+## 📚 CLI コマンド
+
+| コマンド | 説明 | 例 |
+|----------|------|-----|
+| `bungo collect` | データ収集 | `bungo collect --author "夏目漱石"` |
+| `bungo search author` | 作者検索 | `bungo search author "夏目"` |
+| `bungo search work` | 作品検索 | `bungo search work "坊っちゃん"` |
+| `bungo search place` | 地名検索 | `bungo search place "松山"` |
+| `bungo export geojson` | GeoJSON出力 | `bungo export geojson` |
+| `bungo-server` | API server | `bungo-server --port 8000` |
+
+## 🔧 システム要件
+
+- **Python**: 3.11+
+- **データベース**: SQLite / PostgreSQL
+- **NLP**: spaCy 3.7 + ja-ginza 5.1
+- **形態素解析**: MeCab + unidic
+- **キャッシュ**: Redis (オプション)
+
+## 📊 データ構造
+
+### authors テーブル
+```sql
+CREATE TABLE authors (
+    author_id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+### works テーブル
+```sql
+CREATE TABLE works (
+    work_id INTEGER PRIMARY KEY,
+    author_id INTEGER REFERENCES authors(author_id),
+    title TEXT NOT NULL,
+    wiki_url TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+### places テーブル
+```sql
+CREATE TABLE places (
+    place_id INTEGER PRIMARY KEY,
+    work_id INTEGER REFERENCES works(work_id),
+    place_name TEXT NOT NULL,
+    lat REAL,
+    lng REAL,
+    before_text TEXT,
+    sentence TEXT,
+    after_text TEXT,
+    aozora_url TEXT,
+    confidence REAL DEFAULT 0.0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+## 🧪 テスト
+
+```bash
+# ユニットテスト実行
+make test
+
+# カバレッジ測定
+make test-cov
+
+# リント実行
+make lint
+
+# コード品質チェック
+make check
+```
+
+## 📈 パフォーマンス目標
+
+| 指標 | 目標値 |
+|------|--------|
+| 地名抽出精度 | 85%以上 |
+| 検索応答時間 | 0.5秒以内 |
+| GeoJSON描画 | 2秒以内（1万ピン） |
+| データ更新 | エラー率1%未満 |
+
+## 🛠️ 開発環境
+
+- **エディタ**: VS Code + 開発コンテナ
+- **フォーマッタ**: Black
+- **リンター**: Flake8 + MyPy
+- **テスト**: Pytest
+- **CI/CD**: GitHub Actions
+
+## 📖 API ドキュメント
+
+API server起動後、以下のURLでSwagger UIにアクセス可能：
+- http://localhost:8000/docs
+
+## 🗂️ プロジェクト構造
+
+```
+bungo_project_v2/
+├── bungo_map/         # メインパッケージ
+│   ├── cli/           # コマンドラインインターフェース
+│   ├── core/          # データベース・基本機能
+│   ├── extractors/    # 地名抽出エンジン
+│   ├── geocoding/     # ジオコーディング
+│   ├── api/           # REST API
+│   └── utils/         # ユーティリティ
+├── tests/             # テストスイート
+├── data/              # データファイル
+├── output/            # 出力ファイル
+├── cache/             # キャッシュファイル
+├── docs/              # ドキュメント
+└── scripts/           # 各種スクリプト
+```
+
+## 🚧 ロードマップ
+
+- **v2.0**: 3階層データモデル + 高精度地名抽出 ⭐ **現在**
+- **v2.1**: GPT関連度判定機能
+- **v2.2**: 差分配信API + Cloud Function対応
+- **v2.3**: MapKit連携強化
+- **v3.0**: リアルタイム協調編集機能
+
+## 📄 ライセンス
+
+MIT License
+
+## 🤝 コントリビューション
+
+Issue、Pull Request歓迎！詳細は [CONTRIBUTING.md](CONTRIBUTING.md) をご参照ください。
+
+---
+
+**🌟 強くてニューゲーム版で、より安定・高速・拡張性の高いシステムを目指します！** 
+

@@ -1,0 +1,10 @@
+place_id,place_name,lat,lng,author_name,birth_year,death_year,work_title,confidence,extraction_method,before_text,sentence,after_text,work_wiki_url,author_wiki_url
+7,東京,35.6768601,139.7638947,夏目漱石,,,こころ,0.85,sample_data,秋になって,秋になって東京に戻ると、先生との交流が始まった,。先生の家は,https://ja.wikipedia.org/wiki/こころ_(小説),https://ja.wikipedia.org/wiki/%E5%A4%8F%E7%9B%AE%E6%BC%B1%E7%9F%B3
+6,鎌倉,35.3192808,139.5469627,夏目漱石,,,こころ,0.9,sample_data,私は夏休みに,私は夏休みに鎌倉の海岸で先生と出会った,。先生は毎日,https://ja.wikipedia.org/wiki/こころ_(小説),https://ja.wikipedia.org/wiki/%E5%A4%8F%E7%9B%AE%E6%BC%B1%E7%9F%B3
+5,本郷,35.7077379,139.760167,夏目漱石,,,吾輩は猫である,0.85,sample_data,主人は毎日,主人は毎日本郷の学校へ通っている,。帰りはいつも,https://ja.wikipedia.org/wiki/吾輩は猫である,https://ja.wikipedia.org/wiki/%E5%A4%8F%E7%9B%AE%E6%BC%B1%E7%9F%B3
+4,東京,35.6768601,139.7638947,夏目漱石,,,吾輩は猫である,0.9,sample_data,この家は,この家は東京の片隅にある小さな家である,。主人は学校の,https://ja.wikipedia.org/wiki/吾輩は猫である,https://ja.wikipedia.org/wiki/%E5%A4%8F%E7%9B%AE%E6%BC%B1%E7%9F%B3
+1,松山市,33.8395188,132.7653521,夏目漱石,,,坊っちゃん,0.9,sample_data,汽車が,汽車が松山市に着いた時には、もう日が暮れていた,。プラットホームには,https://ja.wikipedia.org/wiki/坊っちゃん,https://ja.wikipedia.org/wiki/%E5%A4%8F%E7%9B%AE%E6%BC%B1%E7%9F%B3
+3,瀬戸内海,34.8913669,134.6533345,夏目漱石,,,坊っちゃん,0.8,sample_data,向こうに見える,向こうに見える瀬戸内海の島々は美しかった,。しかし、おれは,https://ja.wikipedia.org/wiki/坊っちゃん,https://ja.wikipedia.org/wiki/%E5%A4%8F%E7%9B%AE%E6%BC%B1%E7%9F%B3
+2,道後温泉,33.8504258,132.7850817,夏目漱石,,,坊っちゃん,0.85,sample_data,赤シャツと一緒に,赤シャツと一緒に道後温泉へ行った,。湯は思ったより,https://ja.wikipedia.org/wiki/坊っちゃん,https://ja.wikipedia.org/wiki/%E5%A4%8F%E7%9B%AE%E6%BC%B1%E7%9F%B3
+8,京都,35.242552,135.454601,芥川龍之介,,,羅生門,0.95,sample_data,ある日の暮方の事である。一人の下人が,一人の下人が京都の羅生門の下で雨やみを待っていた,。羅生門の上には,https://ja.wikipedia.org/wiki/羅生門_(小説),https://ja.wikipedia.org/wiki/%E8%8A%A5%E5%B7%9D%E9%BE%8D%E4%B9%8B%E4%BB%8B
+9,朱雀大路,33.5110881,130.515145,芥川龍之介,,,羅生門,0.8,sample_data,羅生門から,羅生門から朱雀大路を見下ろすと人影はない,。ただ、ところどころに,https://ja.wikipedia.org/wiki/羅生門_(小説),https://ja.wikipedia.org/wiki/%E8%8A%A5%E5%B7%9D%E9%BE%8D%E4%B9%8B%E4%BB%8B

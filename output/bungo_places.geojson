@@ -1,0 +1,259 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "title": "文豪ゆかり地図",
+    "description": "日本の文豪作品に登場する地名データ",
+    "version": "2.0.0",
+    "generated_at": "2025-06-06T16:57:33.642931",
+    "total_places": 9,
+    "unique_authors": 2,
+    "unique_works": 4,
+    "coordinate_system": "WGS84",
+    "data_source": "bungo-map v2.0"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7638947,
+          35.6768601
+        ]
+      },
+      "properties": {
+        "place_id": 7,
+        "place_name": "東京",
+        "author_name": "夏目漱石",
+        "author_lifespan": "",
+        "work_title": "こころ",
+        "context": "秋になって**秋になって東京に戻ると、先生との交流が始まった**。先生の家は",
+        "confidence": 0.85,
+        "extraction_method": "sample_data",
+        "title": "東京",
+        "subtitle": "夏目漱石『こころ』",
+        "work_wiki_url": "https://ja.wikipedia.org/wiki/こころ_(小説)",
+        "author_wiki_url": "https://ja.wikipedia.org/wiki/%E5%A4%8F%E7%9B%AE%E6%BC%B1%E7%9F%B3",
+        "category": "other",
+        "era": "unknown",
+        "work_id": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.5469627,
+          35.3192808
+        ]
+      },
+      "properties": {
+        "place_id": 6,
+        "place_name": "鎌倉",
+        "author_name": "夏目漱石",
+        "author_lifespan": "",
+        "work_title": "こころ",
+        "context": "私は夏休みに**私は夏休みに鎌倉の海岸で先生と出会った**。先生は毎日",
+        "confidence": 0.9,
+        "extraction_method": "sample_data",
+        "title": "鎌倉",
+        "subtitle": "夏目漱石『こころ』",
+        "work_wiki_url": "https://ja.wikipedia.org/wiki/こころ_(小説)",
+        "author_wiki_url": "https://ja.wikipedia.org/wiki/%E5%A4%8F%E7%9B%AE%E6%BC%B1%E7%9F%B3",
+        "category": "other",
+        "era": "unknown",
+        "work_id": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.760167,
+          35.7077379
+        ]
+      },
+      "properties": {
+        "place_id": 5,
+        "place_name": "本郷",
+        "author_name": "夏目漱石",
+        "author_lifespan": "",
+        "work_title": "吾輩は猫である",
+        "context": "主人は毎日**主人は毎日本郷の学校へ通っている**。帰りはいつも",
+        "confidence": 0.85,
+        "extraction_method": "sample_data",
+        "title": "本郷",
+        "subtitle": "夏目漱石『吾輩は猫である』",
+        "work_wiki_url": "https://ja.wikipedia.org/wiki/吾輩は猫である",
+        "author_wiki_url": "https://ja.wikipedia.org/wiki/%E5%A4%8F%E7%9B%AE%E6%BC%B1%E7%9F%B3",
+        "category": "district",
+        "era": "unknown",
+        "work_id": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.7638947,
+          35.6768601
+        ]
+      },
+      "properties": {
+        "place_id": 4,
+        "place_name": "東京",
+        "author_name": "夏目漱石",
+        "author_lifespan": "",
+        "work_title": "吾輩は猫である",
+        "context": "この家は**この家は東京の片隅にある小さな家である**。主人は学校の",
+        "confidence": 0.9,
+        "extraction_method": "sample_data",
+        "title": "東京",
+        "subtitle": "夏目漱石『吾輩は猫である』",
+        "work_wiki_url": "https://ja.wikipedia.org/wiki/吾輩は猫である",
+        "author_wiki_url": "https://ja.wikipedia.org/wiki/%E5%A4%8F%E7%9B%AE%E6%BC%B1%E7%9F%B3",
+        "category": "other",
+        "era": "unknown",
+        "work_id": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7653521,
+          33.8395188
+        ]
+      },
+      "properties": {
+        "place_id": 1,
+        "place_name": "松山市",
+        "author_name": "夏目漱石",
+        "author_lifespan": "",
+        "work_title": "坊っちゃん",
+        "context": "汽車が**汽車が松山市に着いた時には、もう日が暮れていた**。プラットホームには",
+        "confidence": 0.9,
+        "extraction_method": "sample_data",
+        "title": "松山市",
+        "subtitle": "夏目漱石『坊っちゃん』",
+        "work_wiki_url": "https://ja.wikipedia.org/wiki/坊っちゃん",
+        "author_wiki_url": "https://ja.wikipedia.org/wiki/%E5%A4%8F%E7%9B%AE%E6%BC%B1%E7%9F%B3",
+        "category": "city",
+        "era": "unknown",
+        "work_id": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.6533345,
+          34.8913669
+        ]
+      },
+      "properties": {
+        "place_id": 3,
+        "place_name": "瀬戸内海",
+        "author_name": "夏目漱石",
+        "author_lifespan": "",
+        "work_title": "坊っちゃん",
+        "context": "向こうに見える**向こうに見える瀬戸内海の島々は美しかった**。しかし、おれは",
+        "confidence": 0.8,
+        "extraction_method": "sample_data",
+        "title": "瀬戸内海",
+        "subtitle": "夏目漱石『坊っちゃん』",
+        "work_wiki_url": "https://ja.wikipedia.org/wiki/坊っちゃん",
+        "author_wiki_url": "https://ja.wikipedia.org/wiki/%E5%A4%8F%E7%9B%AE%E6%BC%B1%E7%9F%B3",
+        "category": "nature",
+        "era": "unknown",
+        "work_id": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          132.7850817,
+          33.8504258
+        ]
+      },
+      "properties": {
+        "place_id": 2,
+        "place_name": "道後温泉",
+        "author_name": "夏目漱石",
+        "author_lifespan": "",
+        "work_title": "坊っちゃん",
+        "context": "赤シャツと一緒に**赤シャツと一緒に道後温泉へ行った**。湯は思ったより",
+        "confidence": 0.85,
+        "extraction_method": "sample_data",
+        "title": "道後温泉",
+        "subtitle": "夏目漱石『坊っちゃん』",
+        "work_wiki_url": "https://ja.wikipedia.org/wiki/坊っちゃん",
+        "author_wiki_url": "https://ja.wikipedia.org/wiki/%E5%A4%8F%E7%9B%AE%E6%BC%B1%E7%9F%B3",
+        "category": "prefecture",
+        "era": "unknown",
+        "work_id": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.454601,
+          35.242552
+        ]
+      },
+      "properties": {
+        "place_id": 8,
+        "place_name": "京都",
+        "author_name": "芥川龍之介",
+        "author_lifespan": "",
+        "work_title": "羅生門",
+        "context": "ある日の暮方の事である。一人の下人が**一人の下人が京都の羅生門の下で雨やみを待っていた**。羅生門の上には",
+        "confidence": 0.95,
+        "extraction_method": "sample_data",
+        "title": "京都",
+        "subtitle": "芥川龍之介『羅生門』",
+        "work_wiki_url": "https://ja.wikipedia.org/wiki/羅生門_(小説)",
+        "author_wiki_url": "https://ja.wikipedia.org/wiki/%E8%8A%A5%E5%B7%9D%E9%BE%8D%E4%B9%8B%E4%BB%8B",
+        "category": "prefecture",
+        "era": "unknown",
+        "work_id": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.515145,
+          33.5110881
+        ]
+      },
+      "properties": {
+        "place_id": 9,
+        "place_name": "朱雀大路",
+        "author_name": "芥川龍之介",
+        "author_lifespan": "",
+        "work_title": "羅生門",
+        "context": "羅生門から**羅生門から朱雀大路を見下ろすと人影はない**。ただ、ところどころに",
+        "confidence": 0.8,
+        "extraction_method": "sample_data",
+        "title": "朱雀大路",
+        "subtitle": "芥川龍之介『羅生門』",
+        "work_wiki_url": "https://ja.wikipedia.org/wiki/羅生門_(小説)",
+        "author_wiki_url": "https://ja.wikipedia.org/wiki/%E8%8A%A5%E5%B7%9D%E9%BE%8D%E4%B9%8B%E4%BB%8B",
+        "category": "district",
+        "era": "unknown",
+        "work_id": 4
+      }
+    }
+  ]
+}

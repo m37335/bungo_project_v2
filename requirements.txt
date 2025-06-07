@@ -1,0 +1,56 @@
+# 🌟 文豪ゆかり地図システム v2.0 - 強くてニューゲーム版
+# Python 3.10.5 対応・安定版構成
+
+# === Core Dependencies ===
+pandas>=1.5.0,<2.1.0
+numpy>=1.21.0,<1.25.0
+
+# === Web Framework ===
+fastapi>=0.85.0,<0.100.0
+uvicorn>=0.18.0,<0.24.0
+pydantic>=1.10.0,<2.0.0
+
+# === NLP & Text Processing ===
+spacy>=3.4.0,<3.5.0
+ja-ginza>=5.1.0,<5.2.0
+mecab-python3>=1.0.6
+unidic-lite>=1.0.8
+
+# === Web scraping & Wikipedia ===
+requests>=2.28.0
+beautifulsoup4>=4.11.0
+lxml>=4.6.0
+
+# === Database & Storage ===
+sqlalchemy>=1.4.0,<2.0.0
+psycopg2-binary>=2.9.0
+
+# === Google Services ===
+gspread>=5.0.0
+google-auth>=2.0.0
+
+# === Geocoding & Maps ===
+geopy>=2.2.0
+googlemaps>=4.6.0
+
+# === Data Export & Processing ===
+openpyxl>=3.0.0
+chardet>=5.0.0
+
+# === Development & Testing ===
+pytest>=7.0.0
+black>=22.0.0
+flake8>=5.0.0
+
+# === Utilities ===
+python-dotenv>=0.19.0
+pyyaml>=6.0.0
+click>=7.0.0,<8.1.0
+tqdm>=4.60.0
+rich>=12.0.0
+
+# === Text Processing ===
+mojimoji>=0.0.12
+
+# === Development Tools ===
+ipython>=8.0.0 

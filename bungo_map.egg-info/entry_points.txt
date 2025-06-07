@@ -1,0 +1,4 @@
+[console_scripts]
+bungo = bungo_map.cli.main:main
+bungo-server = bungo_map.api.server:main
+
